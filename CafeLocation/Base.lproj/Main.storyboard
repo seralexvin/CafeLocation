@@ -11,18 +11,75 @@
         <scene sceneID="Huh-DO-3MS">
             <objects>
                 <tableViewController id="CDE-1O-Ckn" customClass="ViewController" customModule="CafeLocation" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ZQX-Op-czx">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="85" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ZQX-Op-czx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cafeCell" id="ZIY-D9-aXm">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cafeCell" id="ZIY-D9-aXm" customClass="CustomTableViewCell" customModule="CafeLocation" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="85"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZIY-D9-aXm" id="GhT-kQ-c0W">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="85"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lQh-li-CUJ">
+                                            <rect key="frame" x="15" y="10" width="65" height="65"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="65" id="Vrc-3N-qKf"/>
+                                                <constraint firstAttribute="width" constant="65" id="pIh-J8-kVx"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="auy-hE-ACf">
+                                            <rect key="frame" x="95" y="9" width="299" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="fm5-df-ZVI"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="18"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LOQ-9Z-hj2">
+                                            <rect key="frame" x="95" y="35" width="315" height="18"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="18" id="Bzi-8J-sPf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="15"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ZI-gY-r6e">
+                                            <rect key="frame" x="95" y="54" width="315" height="15"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="15" id="0Kb-N6-9nt"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Cochin" family="Cochin" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="8ZI-gY-r6e" firstAttribute="top" secondItem="LOQ-9Z-hj2" secondAttribute="bottom" constant="1" id="Bk1-KX-qPg"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="8ZI-gY-r6e" secondAttribute="bottom" constant="5" id="C1k-up-4YN"/>
+                                        <constraint firstItem="LOQ-9Z-hj2" firstAttribute="trailing" secondItem="GhT-kQ-c0W" secondAttribute="trailingMargin" constant="16" id="DE0-wm-Ad7"/>
+                                        <constraint firstItem="LOQ-9Z-hj2" firstAttribute="leading" secondItem="lQh-li-CUJ" secondAttribute="trailing" constant="15" id="HBl-Dd-cXV"/>
+                                        <constraint firstItem="auy-hE-ACf" firstAttribute="leading" secondItem="lQh-li-CUJ" secondAttribute="trailing" constant="15" id="IRL-nP-D1Y"/>
+                                        <constraint firstItem="auy-hE-ACf" firstAttribute="top" secondItem="GhT-kQ-c0W" secondAttribute="top" constant="9" id="KMr-RK-ErI"/>
+                                        <constraint firstItem="LOQ-9Z-hj2" firstAttribute="top" secondItem="auy-hE-ACf" secondAttribute="bottom" constant="5" id="SvC-RL-fxF"/>
+                                        <constraint firstItem="8ZI-gY-r6e" firstAttribute="top" secondItem="LOQ-9Z-hj2" secondAttribute="bottom" constant="1" id="VcE-Fa-9Zy"/>
+                                        <constraint firstItem="8ZI-gY-r6e" firstAttribute="trailing" secondItem="GhT-kQ-c0W" secondAttribute="trailingMargin" constant="16" id="WGa-Qq-8Kh"/>
+                                        <constraint firstItem="lQh-li-CUJ" firstAttribute="leading" secondItem="GhT-kQ-c0W" secondAttribute="leading" constant="15" id="dvi-dM-Axx"/>
+                                        <constraint firstAttribute="trailing" secondItem="auy-hE-ACf" secondAttribute="trailing" constant="20" symbolic="YES" id="ux7-No-9Rt"/>
+                                        <constraint firstItem="8ZI-gY-r6e" firstAttribute="leading" secondItem="lQh-li-CUJ" secondAttribute="trailing" constant="15" id="xzC-IR-2jR"/>
+                                        <constraint firstItem="lQh-li-CUJ" firstAttribute="centerY" secondItem="GhT-kQ-c0W" secondAttribute="centerY" id="y9L-rZ-rKo"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="imageOfPlace" destination="lQh-li-CUJ" id="mxw-O7-QA9"/>
+                                    <outlet property="locationLabel" destination="LOQ-9Z-hj2" id="xY3-Ki-QCc"/>
+                                    <outlet property="nameLabel" destination="auy-hE-ACf" id="fTu-8O-8qZ"/>
+                                    <outlet property="typeLabel" destination="8ZI-gY-r6e" id="00L-ra-Flw"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -34,7 +91,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x11-os-HTj" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="540" y="143"/>
+            <point key="canvasLocation" x="539.13043478260875" y="142.63392857142856"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iaW-ha-StA">
